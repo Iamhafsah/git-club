@@ -5,18 +5,36 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import client from './client';
+import HomePage from './HomePage'
+import Nav from './Nav'
+import SignIn from './SignIn'
 import './App.css';
 
+
 function App() {
+
+  const [input, setInput] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-          Learn React
-      </header>
-    </div>
+    <Router>
+      <ApolloProvider client={client}>
+    <>
+    <Nav/>
+    <Switch>
+      <Route exact path="/sigin">
+        <SignIn value={input} 
+onChange={setInput}/>
+      </Route>
+      <Route exact path="/">
+        <HomePage input={input}/>
+      </Route>
+    </Switch>
+   
+    </>
+  </ApolloProvider>
+  </Router>
+  
   );
 }
 

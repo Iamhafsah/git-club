@@ -1,38 +1,195 @@
-.App {
-  text-align: center;
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+.header{
+    max-width: 100vw;
+    width:  100vw;
+    height: 10vh;
+    color: white;
+    background-color: black;
+    padding: 0em;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.profile-top{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+}
+.profile-top img{
+    width: 20vw;
+    padding: 1em;
+    border-radius: 50%;
+}
+.names{
+    font-weight: normal;
+}
+.names span{
+    font-size: 1.1em;
+}
+.dot{
+    color: red;
+}
+.follower-info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 1em;
+}
+.profile-bottom{
+    text-align: left;
+    padding: 1em;
+}
+.icons{
+    font-size:  19px !important;
+    margin-right: .4em;
+}
+.edit-profile{
+    height:2em;
+    width:90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2em;
+    font-weight: bold;
+    border-radius: .2em;
+    border: 1px solid rgb(156, 154, 154);
+}
+li{
+    list-style-type: none;
+    font-size: 1.2em;
+}
+.headings{
+    display: flex;
+    justify-content: space-around;
+    /* overflow-x: auto; */
+}
+.headings a{
+    color: black;
+    font-size: 1em;
+    margin-top: 2em;
+}
+.headings li{
+    margin-right: .7em;
+}
+.pinned-item{
+    border: 1px solid rgb(156, 154, 154);
+    margin: auto;
+    margin-bottom: 1em;
+    max-width: 90vw;
+    border-radius: .2em;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+.name-lang{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.lang-container, .lang-div{
+    display: flex;
+    align-items: center;
+    margin-top: .5em;
+}
+.repo-icon, .circle-icon{
+    margin-right: .5em;
+}
+.lang{
+    margin-top: 1em;
+}
+.repo-icon, .dot-icon{
+    color: rgb(126, 126, 126);
+}
+.circle-icon{
+    color: rgb(35, 35, 92);
+}
+.repo-name{
+    color: rgb(14, 86, 241);
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.twitter, .location{
+    display: flex;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* repository styles */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.repos{
+    border-bottom: 1px solid rgb(126, 126, 126);
+    max-width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    text-align: left;
+    padding: 1em;
 }
-
-.App-link {
-  color: #61dafb;
+.description{
+    font-size: .9em !important;
 }
+.star-div{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border: 1px solid rgb(126, 126, 126);
+    padding: .2em .5em;
+    border-radius: .2em;
+}
+.home-page{
+    display:block;
+}
+.repo-section{
+    display: block;
+}
+.names span{
+    display: block;
+}
+/* media queries */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (min-width:750px){
+    .home-page{
+        display:flex;
+        justify-content:space-around;
+    }
+    .profile{
+        max-width:20vw
+    }
+    .profile-top{
+        flex-direction: column;
+        text-align: center;
+    }
+    .edit-profile{
+        max-width: 20vw;
+        height: 1.5em;
+    }
+    .repo-section{
+        max-width: 80vw;
+    }
+    .profile img{
+        margin-top: 2em;
+    }
+    .names{
+        margin-top: -1em;
+    }
+    .names span{
+        margin-top: -1em;
+    }
+    .follower-info{
+        font-size: .9em;
+        justify-content: center;
+    }
+    .icons{
+        margin-left: -.3em;
+        margin-right: .1em;
+    }
 }

@@ -14,8 +14,6 @@ import RepositoryItems from './RepositoryItems'
 interface Props{
     repo: any;
     pinned:any;
-  
-  
 }
 const RepoSection:React.FC <Props>= ({repo,pinned}) => {
     return (
@@ -37,14 +35,14 @@ const RepoSection:React.FC <Props>= ({repo,pinned}) => {
             <Switch>
             <Route path = '/home/pinned'>
             <section className='repo-info'>
-                {pinned.edges.map((item, i)=>(
+                {pinned.edges.map((item:any, i:number)=>(
                     <PinnedItems pinned={item} key={i}/>
                 ))}
             </section>
             </Route>
             <Route exact path='/'>
             <section>
-                {repo.edges.map((item, i)=> (
+                {repo.edges.map((item:any, i:any)=> (
                     <RepositoryItems repo={item} key={i}/>
                 ))}
             </section>
