@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import client from './client';
 import HomePage from './HomePage'
-import Nav from './Nav'
 import SignIn from './SignIn'
 import './App.css';
 
@@ -20,7 +19,7 @@ function App() {
     <Router>
       <ApolloProvider client={client}>
     <>
-    <Nav/>
+    
     <Switch>
       <Route exact path="/sigin">
         <SignIn value={input} 

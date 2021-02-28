@@ -4,13 +4,11 @@ import DragIndicatorOutlinedIcon from '@material-ui/icons/DragIndicatorOutlined'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 interface Props{
-    name: string;
-    primaryLanguage: string;
+    pinned: any;
 }
 
-const PinnedItems:React.FC <Props> = ({
-name, primaryLanguage
-}) => {
+const PinnedItems:React.FC <Props> = ({pinned}) => {
+    const {node:{name,primaryLanguage:{name:language}}} = pinned;
 
     return (
         <div className='pinned-item'>
@@ -20,7 +18,7 @@ name, primaryLanguage
                 </div>
                 
                 <div className='lang-container lang'>
-                <FiberManualRecordIcon className="circle-icon"/>    {primaryLanguage}
+                <FiberManualRecordIcon className="circle-icon"/>    {language}
                  </div>
             </div>     
       

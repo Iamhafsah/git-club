@@ -28,7 +28,7 @@ login, name, bio, location, avatarUrl,twitterUsername, email, followers,followin
 
                    <div className='names'>
                        <h1>{name}</h1>
-                       <span>@{login}</span>
+                       <span>{login}</span>
                    </div>
                </div>
 
@@ -44,7 +44,7 @@ login, name, bio, location, avatarUrl,twitterUsername, email, followers,followin
 
                        <div className='location'><LocationOnIcon className='icons'/>{location}</div>
                        <div><MailOutlineIcon className='icons'/>{email}</div>
-                       <div className= 'twitter'><TwitterIcon className='icons'/> {twitterUsername}</div>
+                       <div className= 'twitter'><TwitterIcon className='icons'/> @{twitterUsername}</div>
                    </div>
                </div>
            </section>

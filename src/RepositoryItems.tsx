@@ -3,16 +3,11 @@ import {Typography} from "@material-ui/core";
   import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';import StarOutlineIcon from '@material-ui/icons/StarOutline';
 
 interface Props{
-    name: string;
-    url?: string;
-    descriptionHTML: string;
-    updatedAt: any;
-    languages: string;
+    repo: any;
 }
-const RepositoryItems:React.FC <Props> =({
-    name, url, descriptionHTML, updatedAt, languages
-}) =>{
-   
+
+const RepositoryItems:React.FC <Props> =({repo}) =>{
+    const {node:{name, url, descriptionHTML, updatedAt, languages:{nodes:{name:repoLanguage}} }} = repo;
     return (
         <div className='repos'>
             <div>
@@ -26,7 +21,7 @@ const RepositoryItems:React.FC <Props> =({
                 </div>
                 <div className='lang-div'>
                     <FiberManualRecordIcon className='circle-icon'/>
-                   <span>{languages}</span>
+                   <span>{repoLanguage}</span>
                     <span>updated {updatedAt}</span>
                 </div>
                

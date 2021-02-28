@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 
 interface Props{
     value:string;
-    onChange: (e:any)=>string;
+    onChange: any;
 }
 
 const SignIn:React.FC <Props>  =({value, onChange}) => {

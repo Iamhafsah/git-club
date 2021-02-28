@@ -12,15 +12,17 @@ import RepositoryItems from './RepositoryItems'
            
 
 interface Props{
-    repo: any;
-    pinned:any;
+    repo?: any;
+    pinned?:any;
+    totalCount: number;
+
 }
-const RepoSection:React.FC <Props>= ({repo,pinned}) => {
+const RepoSection:React.FC <Props>= ({repo,pinned, totalCount}) => {
     return (
         <div className='repo-section'>
              <ul className='headings'>
                 <Link to='/'>
-                <li> <CollectionsBookmarkOutlinedIcon/> Repositories</li>
+                <li> <CollectionsBookmarkOutlinedIcon/> Repositories <span className='repo-count'>{totalCount}</span></li>
                 </Link>
                 <Link to='/home/pinned'>
                 <li><MoveToInboxOutlinedIcon/> Pinned</li>
@@ -36,14 +38,19 @@ const RepoSection:React.FC <Props>= ({repo,pinned}) => {
             <Route path = '/home/pinned'>
             <section className='repo-info'>
                 {pinned.edges.map((item:any, i:number)=>(
-                    <PinnedItems pinned={item} key={i}/>
+                    <PinnedItems key={i}
+                    pinned={item}
+                    />
                 ))}
             </section>
             </Route>
+
             <Route exact path='/'>
             <section>
                 {repo.edges.map((item:any, i:any)=> (
-                    <RepositoryItems repo={item} key={i}/>
+                    <RepositoryItems key={i} 
+                    repo= {item}      
+                     />
                 ))}
             </section>
             </Route>

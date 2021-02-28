@@ -54,7 +54,7 @@ query($profileName: String!){
         }
       }
     }
-    repositories (last: 6){
+    repositories (last: 10){
       totalCount
       edges{
         node{
@@ -70,5 +70,5 @@ query($profileName: String!){
         }
       }
     } 
-  }
+  }}
 `
