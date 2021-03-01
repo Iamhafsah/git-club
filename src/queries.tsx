@@ -67,6 +67,10 @@ query($profileName: String!){
               name
             }
           }
+          primaryLanguage{
+            name
+            color
+          }
         }
       }
     } 

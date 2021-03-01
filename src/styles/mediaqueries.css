@@ -1,0 +1,46 @@
+
+@media screen and (min-width:1000px){
+
+    .home-page{
+        flex-direction: row;
+        justify-content:space-around;
+    }
+    .profile{
+        max-width:20vw
+    }
+    .profile-top{
+        flex-direction: column;
+        text-align: center;
+    }
+    .edit-profile{
+        max-width: 20vw;
+        height: 1.5em;
+    }
+    .repo-section{
+        max-width: 80vw;
+    }
+    .profile img{
+        margin-top: 2em;
+    }
+    .names{
+        margin-top: -1em;
+    }
+    .names span{
+        margin-top: -1em;
+    }
+    .follower-info{
+        font-size: .9em;
+        justify-content: center;
+    }
+    .icons{
+        margin-left: -.3em;
+        margin-right: .1em;
+    }
+    .top-bar{
+        display: flex;
+    }
+    .repos{
+        width: 65vw;
+        margin: 0em;
+    }
+}

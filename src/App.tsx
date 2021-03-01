@@ -6,26 +6,32 @@ import {
   Route
 } from "react-router-dom";
 import client from './client';
-import HomePage from './HomePage'
-import SignIn from './SignIn'
-import './App.css';
+import HomePage from './components/HomePage'
+import SignIn from './components/SignIn'
+import './styles/App.css';
+import './styles/nav.css';
+import './styles/repo.css';
+import './styles/mediaqueries.css';
 
 
 function App() {
 
   const [input, setInput] = useState('');
 
+  const handleSubmit = (e:any)=> {
+    e.preventDefault()
+}
   return (
     <Router>
       <ApolloProvider client={client}>
     <>
     
     <Switch>
-      <Route exact path="/sigin">
-        <SignIn value={input} 
-onChange={setInput}/>
-      </Route>
       <Route exact path="/">
+        <SignIn value={input} 
+onChange={setInput} handleSubmit={handleSubmit}/>
+      </Route>
+      <Route exact path="/home">
         <HomePage input={input}/>
       </Route>
     </Switch>

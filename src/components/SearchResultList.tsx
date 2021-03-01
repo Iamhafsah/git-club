@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchResult from './SearchResult'
 import {useQuery} from "@apollo/react-hooks"
-import {SEARCH_FOR_REPOS} from "./queries";
+import {SEARCH_FOR_REPOS} from "../queries";
 
 interface Props{
     searchTerm:string;

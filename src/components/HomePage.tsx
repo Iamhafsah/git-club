@@ -4,7 +4,7 @@ import Nav from './Nav'
 import ProfileSection from './ProfileSection'
 import RepoSection from './RepoSection'
 import {CircularProgress} from "@material-ui/core";
-import {GET_USER_PROFILE} from "./queries";
+import {GET_USER_PROFILE} from "../queries";
 import SearchResultList from './SearchResultList'
 
 
@@ -16,7 +16,7 @@ const HomePage: React.FC <Props> = ({input}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     // user info 
-    const {loading, error, data} = useQuery(GET_USER_PROFILE, {variables: {profileName: 'iamhafsah'}})
+    const {loading, error, data} = useQuery(GET_USER_PROFILE, {variables: {profileName: input}})
 
 
 
@@ -53,8 +53,10 @@ if(!data.user){
              following={data.user.following.totalCount}
              starredRepositories={data.user.starredRepositories.totalCount}
             />
+
             <RepoSection 
-            pinned={data.user.pinnedItems} repo={data.user.repositories} totalCount={data.user.repositories.totalCount}/>
+            pinned={data.user.pinnedItems} repo={data.user.repositories} totalCount={data.user.repositories.totalCount} 
+            /> 
             </div>
 
            

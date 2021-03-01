@@ -2,11 +2,13 @@ import React from 'react'
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from "react-router-dom";
 import MoveToInboxOutlinedIcon from '@material-ui/icons/MoveToInboxOutlined';
 import CollectionsBookmarkOutlinedIcon from '@material-ui/icons/CollectionsBookmarkOutlined'
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
+import FolderOpenIcon from '@material-ui/icons/FolderOpen';
+import FindRepo from './FindRepo'
 import PinnedItems from './PinnedItems'
 import RepositoryItems from './RepositoryItems'
            
@@ -15,23 +17,26 @@ interface Props{
     repo?: any;
     pinned?:any;
     totalCount: number;
-
 }
+
 const RepoSection:React.FC <Props>= ({repo,pinned, totalCount}) => {
     return (
         <div className='repo-section'>
              <ul className='headings'>
-                <Link to='/'>
-                <li> <CollectionsBookmarkOutlinedIcon/> Repositories <span className='repo-count'>{totalCount}</span></li>
-                </Link>
-                <Link to='/home/pinned'>
-                <li><MoveToInboxOutlinedIcon/> Pinned</li>
-                </Link>
-                <Link to='/home/'>
+            
+                <li><ImportContactsIcon className='heading-icon'/> Overview</li>
+             
+                <li> <CollectionsBookmarkOutlinedIcon className='heading-icon' /> Repositories <span className='repo-count'>{totalCount}</span></li>
+                
+                <li><MoveToInboxOutlinedIcon className='heading-icon'/> Pinned
+                </li>
+                
                 <li> 
-                <MoveToInboxOutlinedIcon/> Packages</li>
-                </Link>
+                <FolderOpenIcon className='heading-icon'/> Packages</li>
+                
             </ul>
+
+            <FindRepo/>
 
             <Router>
             <Switch>
@@ -45,11 +50,11 @@ const RepoSection:React.FC <Props>= ({repo,pinned, totalCount}) => {
             </section>
             </Route>
 
-            <Route exact path='/'>
+            <Route exact path='/home'>
             <section>
                 {repo.edges.map((item:any, i:any)=> (
                     <RepositoryItems key={i} 
-                    repo= {item}      
+                    repo= {item}   
                      />
                 ))}
             </section>

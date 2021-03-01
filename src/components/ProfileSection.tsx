@@ -41,11 +41,19 @@ login, name, bio, location, avatarUrl,twitterUsername, email, followers,followin
                            className='icons'
                            /> {starredRepositories}
                         </div>
-
-                       <div className='location'><LocationOnIcon className='icons'/>{location}</div>
-                       <div><MailOutlineIcon className='icons'/>{email}</div>
-                       <div className= 'twitter'><TwitterIcon className='icons'/> @{twitterUsername}</div>
-                   </div>
+                    
+                        {location && (
+                            <div className='location'><LocationOnIcon className='icons'/>{location}</div>
+                        )}
+                       
+                        {email && (
+                                <div className='email'><MailOutlineIcon className='icons'/>{email}</div>
+                        )}
+                      
+                        {twitterUsername && (
+                                <div className= 'twitter'><TwitterIcon className='icons'/> @{twitterUsername}</div>
+                        )}
+                 </div>
                </div>
            </section>
     )

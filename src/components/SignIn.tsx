@@ -1,6 +1,8 @@
 import React from 'react'
 import {TextField, Button, makeStyles} from "@material-ui/core";
 import {Link} from "react-router-dom";
+import GitHubIcon from '@material-ui/icons/GitHub';
+
 
 const useStyles = makeStyles({
     input: {
@@ -19,17 +21,23 @@ const useStyles = makeStyles({
     }
 });
 
+
 interface Props{
     value:string;
     onChange: any;
+    handleSubmit: any;
 }
 
-const SignIn:React.FC <Props>  =({value, onChange}) => {
+const SignIn:React.FC <Props>  =({value, onChange, handleSubmit}) => {
 
     const classes = useStyles()
     
     return (
-        <form className={classes.form}>
+
+        <form className={classes.form} onSubmit={handleSubmit}>
+        <h1 className='app-name'>GIT 
+        <GitHubIcon className='git-club-signin'/>
+        CLUB</h1>
         <TextField id="outlined-basic" label="Enter your username to sign in" variant="outlined" 
         className = {classes.input}
         value={value}

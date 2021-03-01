@@ -1,0 +1,67 @@
+.nav-ul{
+    display: none;
+}
+.nav-item{
+    color: white;
+    font-size: .9em;
+    font-weight: 500;
+    display: none;
+}
+.nav-item:hover, .icon:hover{
+    color: grey;
+    cursor: pointer;
+}
+.nav-left, .nav-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-right div, .bell-icon{
+    margin-right: .7em;
+}
+.nav-right div{
+    display: flex;
+    align-items: flex-end;
+}
+.little-avatar, .repo-count{
+    border-radius: 50%;
+    width: 1.5em;
+}
+.github-icon{
+    font-size: 2em !important;
+    padding-right: .5em;
+    padding-left: 1em;
+}
+.nav-left input{
+    background-color: var(--header-dark);
+    padding: .5em;
+    border: 1px solid grey;
+    border-radius: .4em;
+    width: 20em;
+    transition: all 250ms ease;
+
+}
+.nav-left input:focus{
+    width: 40em;
+    background-color: #fff;
+    outline: none;
+    border-color: rgb(63, 63, 236);
+}
+
+.nav-left input::placeholder{
+    color: var(--light-color);
+}
+
+
+@media screen and (min-width:750px){
+    .nav-left{
+        justify-content: flex-start;
+        padding-left: 2em;
+    }
+    .nav-ul{
+        display: flex;
+    }
+    .nav-item{
+        margin-right: 1em;
+    }
+}
