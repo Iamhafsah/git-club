@@ -7,8 +7,6 @@ interface Props{
 }
 
 const SearchResult:React.FC <Props>= ({name}) => {
-
-
     return (
         <div className='search-result'>
           <CollectionsBookmarkOutlinedIcon/>  {name}

@@ -11,6 +11,7 @@ import SearchResultList from './SearchResultList'
 interface Props{
     input:string;
 }
+
 const HomePage: React.FC <Props> = ({input}) => {
 
     const [searchTerm, setSearchTerm] = useState('');
