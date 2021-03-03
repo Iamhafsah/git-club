@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {useQuery} from "@apollo/react-hooks"
 import Nav from './Nav'
 import ProfileSection from './ProfileSection'
 import RepoSection from './RepoSection'
 import {CircularProgress} from "@material-ui/core";
 import {GET_USER_PROFILE} from "../queries";
-import SearchResultList from './SearchResultList'
 
 
 interface Props{
@@ -13,8 +12,7 @@ interface Props{
 }
 
 const HomePage: React.FC <Props> = ({input}) => {
-
-    const [searchTerm, setSearchTerm] = useState('');
+ 
 
     // user info 
     const {loading, error, data} = useQuery(GET_USER_PROFILE, {variables: {profileName: input}})
@@ -25,7 +23,7 @@ if(loading){
     return <div> <CircularProgress/> </div>
 }
 if(error){
-    return <div>{error}</div>
+    return <div>An error occurred. Please check your information and try again.</div>
 }
 if(!data.user){
     return <div>No user found</div>
@@ -35,11 +33,7 @@ if(!data.user){
             
             <Nav 
             avatarUrl={data.user.avatarUrl}
-            value = {searchTerm}
-            onChange={setSearchTerm}
             />
-
-            <SearchResultList searchTerm={searchTerm}/>
 
             <div className='home-page'>
             <ProfileSection

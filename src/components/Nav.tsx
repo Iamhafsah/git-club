@@ -9,17 +9,13 @@ const navItems = ["Pull requests", "Issues", "Marketplace", "Explore"]
 
 interface Props{
     avatarUrl: string;
-    value: string;
-    onChange: any;
 }
-const Nav:React.FC <Props> =({avatarUrl, value, onChange}) => {
+const Nav:React.FC <Props> =({avatarUrl}) => {
     return (
         <nav className='header'>
             <div className='nav-left'>
                 <GitHubIcon className='github-icon'/>
-               <SearchBar 
-               value={value}
-               onChange={onChange}/>
+               <SearchBar />
                
                 <ul className='nav-ul'>
                     {navItems.map((item, i)=>(
