@@ -8,7 +8,7 @@ interface Props{
 }
 
 const RepositoryItems:React.FC <Props> =({repo}) =>{
-    const {node:{name, descriptionHTML, updatedAt, languages:{nodes:{name:repoLanguage
+    const {node:{name, url, descriptionHTML, updatedAt, languages:{nodes:{name:repoLanguage
     }}}} = repo;
 
 
@@ -16,7 +16,10 @@ const RepositoryItems:React.FC <Props> =({repo}) =>{
         <div className='repos'>
             <div>
                 <div>
+                    <a href={url}>
                     <p className="repo-name">{name}</p>
+                    </a>
+
                     <Typography
                      className='description'
                         variant={'caption'}
