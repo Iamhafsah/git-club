@@ -39,7 +39,7 @@ const SignIn:React.FC <Props>  =({value, onChange, handleSubmit}) => {
         /> <br/>
         
        <Link to='/home'>
-        <button className='submit'>
+        <button className='submit' disabled={value === ' '} >
             Sign In
         </button>
       </Link>
