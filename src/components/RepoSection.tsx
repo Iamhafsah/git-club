@@ -26,7 +26,7 @@ const RepoSection:React.FC <Props>= ({repo,pinned, totalCount}) => {
             
                 <li><ImportContactsIcon className='heading-icon'/> Overview</li>
              
-                <li> <CollectionsBookmarkOutlinedIcon className='heading-icon' /> Repositories <span className='repo-count'>{totalCount}</span></li>
+                <li className='repo-active'> <CollectionsBookmarkOutlinedIcon className='heading-icon' /> Repositories <span className='repo-count'>{totalCount}</span></li>
                 
                 <li><MoveToInboxOutlinedIcon className='heading-icon'/> Pinned
                 </li>

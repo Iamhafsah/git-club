@@ -104,6 +104,9 @@ a{
     margin-right: 1em;
     height: 2.5em;
 }
+.repo-active{
+    color: rgb(52, 31, 170) !important;
+}
 .new-repo{
     border: none;
     color: white;
