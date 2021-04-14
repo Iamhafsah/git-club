@@ -49,6 +49,9 @@ a{
 }
 .location, .email, .twitter{
     font-size: .95em;
+    display: flex;
+    align-items: center;
+    margin-bottom: .4em;
 }
 .dot{
     color: red;
@@ -62,6 +65,10 @@ a{
 .profile-bottom{
     text-align: left;
     padding: 1em;
+}
+.profile-bottom-div{
+    display: flex;
+    flex-direction: column;
 }
 .icons{
     font-size:  19px !important;
@@ -87,7 +94,7 @@ a{
     align-items: center;
 }
 .search-repo{
-    max-width: 38.5vw;
+   max-width: 38.5vw;
    background-color: white;
    padding-left: 1em;
    margin-right: 1em;
@@ -112,7 +119,10 @@ li{
     justify-content: flex-start;
     align-items: center;
     margin-left: -2.5em;
-    margin-bottom: 2em;
+    padding-bottom: 1em;
+    margin-top: -.8em;
+    overflow-x: auto;
+    border-bottom: .5px solid rgb(233, 230, 230);
 }
 .headings li{
     margin-right: 2em;

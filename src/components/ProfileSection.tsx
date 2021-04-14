@@ -35,13 +35,14 @@ login, name, bio, location, avatarUrl,twitterUsername, email, followers,followin
                <div className='profile-bottom'>
                     <span>{bio}</span>
                     <p className='edit-profile'>Edit profile</p>
-                   <div>
+                   <div className='profile-bottom-div'>
                        <div className='follower-info'>
                            <PeopleOutlineIcon className='icons'/>{followers} followers.{following} following.<StarOutlineIcon
                            className='icons'
                            /> {starredRepositories}
                         </div>
-                    
+                        
+                        <div>
                         {location && (
                             <div className='location'><LocationOnIcon className='icons'/>{location}</div>
                         )}
@@ -53,6 +54,7 @@ login, name, bio, location, avatarUrl,twitterUsername, email, followers,followin
                         {twitterUsername && (
                                 <div className= 'twitter'><TwitterIcon className='icons'/> @{twitterUsername}</div>
                         )}
+                        </div>
                  </div>
                </div>
            </section>

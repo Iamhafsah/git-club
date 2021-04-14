@@ -1,6 +1,6 @@
 import React from 'react'
 import {TextField, makeStyles} from "@material-ui/core";
-import {Link} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 
@@ -22,9 +22,18 @@ interface Props{
     handleSubmit: any;
 }
 
-const SignIn:React.FC <Props>  =({value, onChange, handleSubmit}) => {
 
+const SignIn:React.FC <Props>  =({value, onChange, handleSubmit}) => {
+    let history = useHistory();
     const classes = useStyles()
+
+    const onClick = ()=> {
+        if(value === ''){
+            return alert('Please input a username')
+        }else{
+            history.push('/home')
+        }
+    }
     
     return (
 
@@ -37,14 +46,12 @@ const SignIn:React.FC <Props>  =({value, onChange, handleSubmit}) => {
         value={value}
         onChange={e => onChange(e.target.value)}
         /> <br/>
-        
-       <Link to='/home'>
-        <button className='submit' disabled={value === ' '} >
+
+        <button className='submit' onClick={onClick}>
             Sign In
         </button>
-      </Link>
         
-    </form>
+        </form>
     )
 }
 

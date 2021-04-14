@@ -53,15 +53,3 @@
 }
 
 
-@media screen and (min-width:750px){
-    .nav-left{
-        justify-content: flex-start;
-        padding-left: 2em;
-    }
-    .nav-ul{
-        display: flex;
-    }
-    .nav-item{
-        margin-right: 1em;
-    }
-}

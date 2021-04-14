@@ -23,9 +23,3 @@
     background: rgb(59, 59, 248);
 }
 
-@media screen and (max-width: 500px) {
-    .app-name{
-        font-size: 3em;
-        /* margin-top: 2em; */
-    }
-}
