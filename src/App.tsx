@@ -4,14 +4,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route
-} from "react-router-dom";
-import client from './client';
+} from "react-router-dom"
+import client from './client'
 import HomePage from './components/HomePage'
 import SignIn from './components/SignIn'
-import './styles/App.css';
-import './styles/nav.css';
-import './styles/repo.css';
-import './styles/mediaqueries.css';
+import './styles/App.css'
+import './styles/signin.css'
+import './styles/nav.css'
+import './styles/repo.css'
+import './styles/mediaqueries.css'
 
 
 function App() {

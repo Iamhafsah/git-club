@@ -1,0 +1,31 @@
+
+.app-name{
+    font-size: 5em;
+    font-weight: 400;
+    color: rgb(34, 34, 192);
+}
+.git-club-signin{
+    font-size: .7em !important;
+}
+.submit{
+    margin-top: 1em ;
+    width: 20%;
+    height: 3em;
+    color: white;
+    background: rgb(34, 34, 192);
+    border-width: 0;
+    border-radius: .4em;
+    font-size: 1em;
+    cursor: pointer;
+    outline-color: skyblue;
+}
+.submit:hover{
+    background: rgb(59, 59, 248);
+}
+
+@media screen and (max-width: 500px) {
+    .app-name{
+        font-size: 3em;
+        /* margin-top: 2em; */
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {TextField, Button, makeStyles} from "@material-ui/core";
+import {TextField, makeStyles} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import GitHubIcon from '@material-ui/icons/GitHub';
 
@@ -7,17 +7,11 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 const useStyles = makeStyles({
     input: {
       maxWidth: '90%',
-      width: '40vw',
+      width: '60vw',
       marginTop: '5em'
     },
     form:{
-       
         alignItems: 'center'
-    },
-    submit:{
-        marginTop: '1em' ,
-        width: '15vw',
-        height: '3.5em'
     }
 });
 
@@ -38,17 +32,16 @@ const SignIn:React.FC <Props>  =({value, onChange, handleSubmit}) => {
         <h1 className='app-name'>GIT 
         <GitHubIcon className='git-club-signin'/>
         CLUB</h1>
-        <TextField id="outlined-basic" label="Enter your username to sign in" variant="outlined" 
+        <TextField id="outlined-basic" label="Enter username" variant="outlined" 
         className = {classes.input}
         value={value}
         onChange={e => onChange(e.target.value)}
         /> <br/>
         
        <Link to='/home'>
-        <Button variant="contained" color="primary" 
-            className = {classes.submit}>
+        <button className='submit'>
             Sign In
-        </Button>
+        </button>
       </Link>
         
     </form>
